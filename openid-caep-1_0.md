@@ -37,6 +37,13 @@ contributor:
         contribution: |
           Apoorva defined the `risk-level-change` event.
 
+contributor:
+      -
+        ins: Y. Sarig
+        name: Yair Sarig
+        org: Omnissa
+        email: ysarig@omnissa.com
+
 normative:
   ISO-IEC-29115:
     target: https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=45138
@@ -730,6 +737,7 @@ be one of the following strings:
 >
 > * `compliant`
 > * `not-compliant`
+> * `unmanaged`: The device is no loner being managed and additional compliance change events may not be sent for this device. The device compliance state is unknown
 
 When `event_timestamp` is included, its value MUST represent the time at which
 the device compliance status changed.
