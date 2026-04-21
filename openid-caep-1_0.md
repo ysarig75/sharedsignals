@@ -737,7 +737,7 @@ be one of the following strings:
 >
 > * `compliant`
 > * `not-compliant`
-> * `unmanaged`: The device is no loner being managed and additional compliance change events may not be sent for this device. The device compliance state is unknown
+> * `unmanaged`: The device is no longer being managed, and additional compliance change events may not be sent for this device. The device’s compliance state is unknown
 
 When `event_timestamp` is included, its value MUST represent the time at which
 the device compliance status changed.
