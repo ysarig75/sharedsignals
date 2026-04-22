@@ -729,6 +729,7 @@ triggered the event. This MUST be one of the following strings:
 >
 > * `compliant`
 > * `not-compliant`
+> * `unknown`
 
 current_status
 
