@@ -36,8 +36,6 @@ contributor:
         email: apoorva.deshpande@okta.com
         contribution: |
           Apoorva defined the `risk-level-change` event.
-
-contributor:
       -
         ins: Y. Sarig
         name: Yair Sarig
