@@ -1,9 +1,8 @@
 ---
-title: OpenID Continuous Access Evaluation Profile 1.0
+title: OpenID Continuous Access Evaluation Profile 1.1
 
 abbrev: CAEP-Spec
 docname: openid-caep-1_0
-date: 2025-08-29
 
 ipr: none
 cat: std
@@ -712,7 +711,7 @@ Event Type URI:
 
 `https://schemas.openid.net/secevent/caep/event-type/device-compliance-change`
 
-Device Compliance Change signals that a device's compliance status has changed.
+Device Compliance Change signals that a device's compliance or managed status has changed.
 
 The actual reason why the status change occurred might be specified with the
 nested `reason_admin` and/or `reason_user` claims made in
@@ -720,23 +719,31 @@ nested `reason_admin` and/or `reason_user` claims made in
 
 ### Event-Specific Claims {#device-compliance-change-claims}
 
+The transmitter MUST send at least one of the current_status or current_management_status claims.
+
 previous_status
 
-> REQUIRED, JSON string: the compliance status prior to the change that
+> OPTIONAL, JSON string: the compliance status prior to the change that
 triggered the event. This MUST be one of the following strings:
 >
 > * `compliant`
 > * `not-compliant`
-> * `unknown`
 
 current_status
 
-> REQUIRED, JSON string: the current status that triggered the event. This MUST
+> OPTIONAL, JSON string: the current status that triggered the event. This MUST
 be one of the following strings:
 >
 > * `compliant`
 > * `not-compliant`
-> * `unmanaged`: The device is no longer being managed, and additional compliance change events may not be sent for this device. The device’s compliance state is unknown
+
+ current_management_status
+
+> OPTIONAL, JSON string: the current management status that triggered the event. This MUST
+be one of the following strings:
+>
+> * `managed`
+> * `not-managed`
 
 When `event_timestamp` is included, its value MUST represent the time at which
 the device compliance status changed.
